@@ -89,9 +89,11 @@ It can fetch data points from the news websites like:
 https://newscatcherapi.com/blog/python-web-scraping-libraries-to-mine-news-data
 ## 7)Feedparser:
  
-The FeedParser Python library runs on Python3.6 or later and can be used to parse syndicated feeds.
-### Features:
-- it can parse RSS or Atom feeds and provide you with the information in the form of easy-to-understand data points. It acts as a news scraper and we can use it to mine news data from RSS feeds of different news websites.
+The FeedParser Python library runs on Python3.6 or later and can be used to parse syndicated feeds.It can parse RSS or Atom feeds and provide you with the information in the form of easy-to-understand data points. It acts as a news scraper and we can use it to mine news data from RSS feeds of different news websites.
+### Extracts:
+- Title
+- Content
+- Links
 ### References:
 https://newscatcherapi.com/blog/python-web-scraping-libraries-to-mine-news-data
 ## 8)Lxml:
