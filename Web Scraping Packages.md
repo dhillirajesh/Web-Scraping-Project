@@ -109,3 +109,27 @@ requests library cannot parse the HTML retrieved from a web page. Therefore, we 
 1)https://www.codespeedy.com/web-scraping-using-lxml-in-python/
 
 2)https://www.analyticsvidhya.com/blog/2020/04/5-popular-python-libraries-web-scraping/
+
+## 9)Urllib And Request:
+URllib is a python package that combines several modules to preprocess the URLs, in other words, it is a library used for HTTP requests using python language on URLs
+
+**Urllib is a package that collects several modules for working with URLs, such as:**
+
+- urllib.request for opening and reading.
+- urllib.parse for parsing URLs
+- urllib.error for the exceptions raised
+- urllib.robotparser for parsing robot.txt files
+### References:
+
+1)https://www.geeksforgeeks.org/python-urllib-module/
+
+2)https://realpython.com/urllib-request/
+
+## 10)RoboBrowser:
+RoboBrowser is a simple, Pythonic library for browsing the web without a standalone web browser. RoboBrowser can fetch a page, click on links and buttons, and fill out and submit forms. If you need to interact with web services that don’t have APIs, RoboBrowser can help.
+
+RoboBrowser combines the best of two excellent Python libraries: **Requests and BeautifulSoup**.
+
+### References:
+
+1)https://robobrowser.readthedocs.io/en/latest/readme.html
