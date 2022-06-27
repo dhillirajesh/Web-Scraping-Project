@@ -94,3 +94,16 @@ The FeedParser Python library runs on Python3.6 or later and can be used to pars
 - it can parse RSS or Atom feeds and provide you with the information in the form of easy-to-understand data points. It acts as a news scraper and we can use it to mine news data from RSS feeds of different news websites.
 ### References:
 https://newscatcherapi.com/blog/python-web-scraping-libraries-to-mine-news-data
+## 8)Lxml:
+requests library cannot parse the HTML retrieved from a web page. Therefore, we require lxml, a high performance, blazingly fast, production-quality HTML, and XML parsing Python library. It combines the speed and power of Element trees with the simplicity of Python. It works well when we’re aiming to scrape large datasets. The combination of requests and lxml is very common in web scraping. It also allows you to extract data from HTML using XPath and CSS selectors.
+
+### Procedure for Extracting text:
+
+- We will use requests.get to retrieve the web page with our data.
+- We use html.fromstring to parse the content using the lxml parser.
+- We create the correct XPath query and use the lxml xpath function to get the required element.
+### Refernces:
+
+1)https://www.codespeedy.com/web-scraping-using-lxml-in-python/
+
+2)https://www.analyticsvidhya.com/blog/2020/04/5-popular-python-libraries-web-scraping/
