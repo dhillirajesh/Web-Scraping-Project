@@ -1,7 +1,8 @@
+import re
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
 def url_links(url):
-    import re
-    import requests
-    from bs4 import BeautifulSoup
     response=requests.get(url)
     soup=BeautifulSoup(response.content,'html.parser')
     url_lis=[]
@@ -22,4 +23,6 @@ def url_links(url):
                 c=c+"/"+a[j]
     return url_lis
    
-print(url_links("https://timesofindia.indiatimes.com"))
+df=pd.DataFrame(url_links('https://www.sakshi.com'))
+df.to_csv('sak_links.csv',index=False,header=False)
+df
