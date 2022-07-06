@@ -1,28 +1,41 @@
-import re
+#importing necessary packages
+
 import requests
+import re
 from bs4 import BeautifulSoup
 import pandas as pd
-def url_links(url):
+import logging
+lis=[]
+
+#creating a recurcive function to get links and appending them to a csv file
+
+def lin(url):
+    
     response=requests.get(url)
-    soup=BeautifulSoup(response.content,'html.parser')
-    url_lis=[]
-    for i in soup.find_all('a',href=True):
-        b=i['href']
-        if re.search(rf"^\b(?=\w){url}\b(?!\w)",b):
-            a=b.replace(url,"")
-            a=a.split('/')
-            c=url
-            for j in range(len(a)):
-                if c in url_lis:
-                    url_lis.remove(c)
-                    url_lis.append(b)
-                    break
-                elif j==len(a)-1:
-                    url_lis.append(b)
-                    break
-                c=c+"/"+a[j]
-    return url_lis
-   
-df=pd.DataFrame(url_links('https://www.sakshi.com'))
-df.to_csv('sak_links.csv',index=False,header=False)
-df
+    
+    try:
+        soup=BeautifulSoup(response.content,'html.parser')
+        
+        for i in soup.find_all('a',href=True):                             #finds all the web elements with tag a
+            
+            b=i['href']                                                    #b is the link in the web element
+            
+            if b not in lis and re.search(rf"^\b(?=\w){url}\b(?!\w)",b):   #checks if the link already existed in the list and the link starting with the base url
+                
+                lis.append(b)                                              #if the link not in list it will be appended
+                
+                df=pd.DataFrame([b])                                       #that link is turned into dataframe
+                
+                df.to_csv('links.csv',mode='a',index=False,header=False)   #append that link to csv file
+                
+                lin(b)                                                     #again calling lin function
+    
+    except Exception as Argument:
+
+        f = open("log.txt", "a")     # creating/opening a file
+        
+        f.write(str(Argument))       # writing in the file
+      
+        f.close()                    # closing the file
+        
+lin('https://telanganatoday.com')
