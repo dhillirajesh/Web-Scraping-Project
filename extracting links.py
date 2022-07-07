@@ -7,7 +7,7 @@ import pandas as pd
 import logging
 lis=[]
 
-# creating a recurcive function to get links and appending them to a csv file
+# creating a recursive function to get links and appending them to a csv file
 
 def lin(url):
     
